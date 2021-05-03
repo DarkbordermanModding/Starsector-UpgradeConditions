@@ -1,0 +1,30 @@
+id,name,cost mult,build time,income,upkeep,downgrade,upgrade,tags,data,image,plugin,desc,order,disruptDanger
+upgradeoresparse,Upgrade to sparse ore,50,90,,0,,,"structure",,graphics/icons/industry/mining_low.png,data.scripts.upgradeconditions.UpgradeOreSparse,"Create sparse ore deposit.",3000,EXTREME
+upgradeoremoderate,Upgrade to moderate ore,100,90,,0,,,"structure",,graphics/icons/industry/mining_low.png,data.scripts.upgradeconditions.UpgradeOreModerate,"Upgrade sparse ore deposit to moderate ore deposit.",3000,EXTREME
+upgradeoreabundant,Upgrade to abundant ore,150,90,,0,,,"structure",,graphics/icons/industry/mining_low.png,data.scripts.upgradeconditions.UpgradeOreAbundant,"Upgrade moderate ore deposit to abundant ore deposit.",3000,EXTREME
+upgradeorerich,Upgrade to rich ore,200,90,,0,,,"structure",,graphics/icons/industry/mining_low.png,data.scripts.upgradeconditions.UpgradeOreRich,"Upgrade moderate ore deposit to rich ore deposit.",3000,EXTREME
+upgradeoreultrarich,Upgrade to ultrarich ore,250,90,,0,,,"structure",,graphics/icons/industry/mining_low.png,data.scripts.upgradeconditions.UpgradeOreUltraRich,"Upgrade rich ore deposit to ultrarich ore deposit.",3000,EXTREME
+,,,,,,,,,,,,,,
+upgraderareoresparse,Upgrade to sparse rare ore,100,90,,0,,,"structure",,graphics/icons/industry/mining_low.png,data.scripts.upgradeconditions.UpgradeRareOreSparse,"Create sparse rare ore deposit.",3000,EXTREME
+upgraderareoremoderate,Upgrade to moderate rare ore,150,90,,0,,,"structure",,graphics/icons/industry/mining_low.png,data.scripts.upgradeconditions.UpgradeRareOreModerate,"Upgrade sparse rare ore to moderate rare ore deposit.",3000,EXTREME
+upgraderareoreabundant,Upgrade to abundant rare ore,200,90,,0,,,"structure",,graphics/icons/industry/mining_low.png,data.scripts.upgradeconditions.UpgradeRareOreAbundant,"Upgrade moderate rare ore to abundant rare ore deposit.",3000,EXTREME
+upgraderareorerich,Upgrade to rich rare ore,250,90,,0,,,"structure",,graphics/icons/industry/mining_low.png,data.scripts.upgradeconditions.UpgradeRareOreRich,"Upgrade abundant rare ore to rich rare ore deposit.",3000,EXTREME
+upgraderareoreultrarich,Upgrade to ultrarich rare ore,300,90,,0,,,"structure",,graphics/icons/industry/mining_low.png,data.scripts.upgradeconditions.UpgradeRareOreUltraRich,"Upgrade rich rare ore to ultrarich rare ore deposit.",3000,EXTREME
+,,,,,,,,,,,,,,
+upgradevolatilestrace,Upgrade to trace volatiles,50,90,,0,,,"structure",,graphics/icons/industry/mining_low.png,data.scripts.upgradeconditions.UpgradeVolatilesTrace,"Create trace volatiles deposit.",3000,EXTREME
+upgradevolatilesdiffuse,Upgrade to diffuse volatiles,100,90,,0,,,"structure",,graphics/icons/industry/mining_low.png,data.scripts.upgradeconditions.UpgradeVolatilesDiffuse,"Upgrade trace volatiles to diffuse volatiles deposit.",3000,EXTREME
+upgradevolatilesabundant,Upgrade to abundant volatiles,150,90,,0,,,"structure",,graphics/icons/industry/mining_low.png,data.scripts.upgradeconditions.UpgradeVolatilesAbundant,"Upgrade diffuse volatiles to abundant volatiles deposit.",3000,EXTREME
+upgradevolatilesplentiful,Upgrade to plentiful volatiles,200,90,,0,,,"structure",,graphics/icons/industry/mining_low.png,data.scripts.upgradeconditions.UpgradeVolatilesPlentiful,"Upgrade abundant volatiles to plentiful volatiles deposit.",3000,EXTREME
+,,,,,,,,,,,,,,
+upgradeorganicstrace,Upgrade to trace organics,50,90,,0,,,"structure",,graphics/icons/industry/mining_low.png,data.scripts.upgradeconditions.UpgradeOrganicsTrace,"Create trace organics deposit.",3000,EXTREME
+upgradeorganicscommon,Upgrade to common organics,100,90,,0,,,"structure",,graphics/icons/industry/mining_low.png,data.scripts.upgradeconditions.UpgradeOrganicsCommon,"Upgrade trace organics to common organics deposit.",3000,EXTREME
+upgradeorganicsabundant,Upgrade to abundant organics,150,90,,0,,,"structure",,graphics/icons/industry/mining_low.png,data.scripts.upgradeconditions.UpgradeOrganicsAbundant,"Upgrade common organics to abundant organics deposit.",3000,EXTREME
+upgradeorganicsplentiful,Upgrade to plentiful organics,200,90,,0,,,"structure",,graphics/icons/industry/mining_low.png,data.scripts.upgradeconditions.UpgradeOrganicsPlentiful,"Upgrade abundant organics to plentiful organics deposit.",3000,EXTREME
+,,,,,,,,,,,,,,
+upgradefarmlandpoor,Upgrade to poor farmland,50,90,,0,,,"structure",,graphics/icons/industry/farming_low.png,data.scripts.upgradeconditions.UpgradeFarmlandPoor,"Create poor farmland.",3000,EXTREME
+upgradefarmlandadequate,Upgrade to adequate farmland,100,90,,0,,,"structure",,graphics/icons/industry/farming_low.png,data.scripts.upgradeconditions.UpgradeFarmlandAdequate,"Upgrade poor farmland to adequate farmland.",3000,EXTREME
+upgradefarmlandrich,Upgrade to rich farmland,150,90,,0,,,"structure",,graphics/icons/industry/farming_low.png,data.scripts.upgradeconditions.UpgradeFarmlandRich,"Upgrade adequate farmland to rich farmland.",3000,EXTREME
+upgradefarmlandbountiful,Upgrade to bountiful farmland,200,90,,0,,,"structure",,graphics/icons/industry/farming_low.png,data.scripts.upgradeconditions.UpgradeFarmlandBountiful,"Upgrade rich farmland to bountiful farmland.",3000,EXTREME
+,,,,,,,,,,,,,,
+upgradehabitable,Add habitable condition,200,180,,0,,,"structure",,graphics/illustrations/academy.jpg,data.scripts.upgradeconditions.UpgradeHabitable,"Create habitable condition.",3000,EXTREME
+upgrademildclimate,Add mild climate condition,200,180,,0,,,"structure",,graphics/illustrations/academy.jpg,data.scripts.upgradeconditions.UpgradeMildClimate,"Create mild climate condition.",3000,EXTREME

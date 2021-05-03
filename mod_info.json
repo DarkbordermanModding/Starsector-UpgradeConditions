@@ -1,0 +1,9 @@
+{
+	"id":"darkborderman.upgradeconditions",
+	"name":"Upgrade conditions",
+	"author":"Darkborderman",
+	"version":"0.0.0",
+	"description":"Add some upgradeable conditions",
+	"gameVersion":"0.95.1a-RC6",
+	"jars": ["jars/upgradeconditions.jar"]
+}
