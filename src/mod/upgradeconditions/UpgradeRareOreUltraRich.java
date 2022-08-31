@@ -1,11 +1,11 @@
-package data.scripts.upgradeconditions;
+package mod.upgradeconditions;
 
 import com.fs.starfarer.api.campaign.econ.Industry;
 import com.fs.starfarer.api.impl.campaign.econ.impl.BaseIndustry;
 import com.fs.starfarer.api.impl.campaign.ids.Conditions;
 
 
-public class UpgradeOrganicsTrace extends BaseIndustry {
+public class UpgradeRareOreUltraRich extends BaseIndustry {
 
 	@Override
 	public void apply() {
@@ -15,27 +15,21 @@ public class UpgradeOrganicsTrace extends BaseIndustry {
 	@Override
 	protected void buildingFinished(){
 		super.buildingFinished();
-		getMarket().addCondition(Conditions.ORGANICS_TRACE);
-		getMarket().getCondition(Conditions.ORGANICS_TRACE).setSurveyed(true);
+		getMarket().removeCondition(Conditions.RARE_ORE_RICH);
+		getMarket().addCondition(Conditions.RARE_ORE_ULTRARICH);
+		getMarket().getCondition(Conditions.RARE_ORE_ULTRARICH).setSurveyed(true);
 		getMarket().reapplyConditions();
 		for(Industry industry: getMarket().getIndustries()){
 			industry.doPreSaveCleanup();
 			industry.doPostSaveRestore();
 		}
-		getMarket().removeIndustry("upgradeorganicstrace", null, false);
+		getMarket().removeIndustry("upgraderareoreultrarich", null, false);
 	}
 
 	@Override
 	public boolean isAvailableToBuild() {
-		if(
-			getMarket().hasCondition(Conditions.ORGANICS_TRACE) ||
-			getMarket().hasCondition(Conditions.ORGANICS_COMMON) ||
-			getMarket().hasCondition(Conditions.ORGANICS_ABUNDANT) ||
-			getMarket().hasCondition(Conditions.ORGANICS_PLENTIFUL)
-		){
-			return false;
-		}
-		return true;
+		if(getMarket().hasCondition(Conditions.RARE_ORE_RICH)) return true;
+		return false;
 	}
 
 	@Override

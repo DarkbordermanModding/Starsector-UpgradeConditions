@@ -1,8 +1,10 @@
 # UpgradeConditions
 
-![Integration](https://github.com/DarkbordermanModding/Starsector-UpgradeConditions/workflows/Integration/badge.svg)
+Add industries to upgrade planet conditions.
 
-Add some temporary industries to upgrade planet conditions in Starsector.
+## Mod archived
+
+### The mod has been integrated into [Starsector-IndustryOverhaul](https://github.com/DarkbordermanModding/Starsector-IndustryOverhaul)
 
 ## Prerequisite
 

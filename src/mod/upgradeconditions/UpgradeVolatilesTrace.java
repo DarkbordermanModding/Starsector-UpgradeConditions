@@ -1,11 +1,11 @@
-package data.scripts.upgradeconditions;
+package mod.upgradeconditions;
 
 import com.fs.starfarer.api.campaign.econ.Industry;
 import com.fs.starfarer.api.impl.campaign.econ.impl.BaseIndustry;
 import com.fs.starfarer.api.impl.campaign.ids.Conditions;
 
 
-public class UpgradeRareOreSparse extends BaseIndustry {
+public class UpgradeVolatilesTrace extends BaseIndustry {
 
 	@Override
 	public void apply() {
@@ -15,24 +15,23 @@ public class UpgradeRareOreSparse extends BaseIndustry {
 	@Override
 	protected void buildingFinished(){
 		super.buildingFinished();
-		getMarket().addCondition(Conditions.RARE_ORE_SPARSE);
-		getMarket().getCondition(Conditions.RARE_ORE_SPARSE).setSurveyed(true);
+		getMarket().addCondition(Conditions.VOLATILES_TRACE);
+		getMarket().getCondition(Conditions.VOLATILES_TRACE).setSurveyed(true);
 		getMarket().reapplyConditions();
 		for(Industry industry: getMarket().getIndustries()){
 			industry.doPreSaveCleanup();
 			industry.doPostSaveRestore();
 		}
-		getMarket().removeIndustry("upgraderareoresparse", null, false);
+		getMarket().removeIndustry("upgradevolatilestrace", null, false);
 	}
 
 	@Override
 	public boolean isAvailableToBuild() {
 		if(
-			getMarket().hasCondition(Conditions.RARE_ORE_SPARSE) ||
-			getMarket().hasCondition(Conditions.RARE_ORE_ABUNDANT) ||
-			getMarket().hasCondition(Conditions.RARE_ORE_MODERATE) ||
-			getMarket().hasCondition(Conditions.RARE_ORE_RICH) ||
-			getMarket().hasCondition(Conditions.RARE_ORE_ULTRARICH)
+			getMarket().hasCondition(Conditions.VOLATILES_TRACE) ||
+			getMarket().hasCondition(Conditions.VOLATILES_DIFFUSE) ||
+			getMarket().hasCondition(Conditions.VOLATILES_ABUNDANT) ||
+			getMarket().hasCondition(Conditions.VOLATILES_PLENTIFUL)
 		){
 			return false;
 		}

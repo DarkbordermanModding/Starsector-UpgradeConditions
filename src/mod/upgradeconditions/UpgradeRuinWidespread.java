@@ -1,11 +1,11 @@
-package data.scripts.upgradeconditions;
+package mod.upgradeconditions;
 
 import com.fs.starfarer.api.campaign.econ.Industry;
 import com.fs.starfarer.api.impl.campaign.econ.impl.BaseIndustry;
 import com.fs.starfarer.api.impl.campaign.ids.Conditions;
 
 
-public class UpgradeOreUltraRich extends BaseIndustry {
+public class UpgradeRuinWidespread extends BaseIndustry {
 
 	@Override
 	public void apply() {
@@ -15,20 +15,21 @@ public class UpgradeOreUltraRich extends BaseIndustry {
 	@Override
 	protected void buildingFinished(){
 		super.buildingFinished();
- 		getMarket().removeCondition(Conditions.ORE_RICH);
-		getMarket().addCondition(Conditions.ORE_ULTRARICH);
-		getMarket().getCondition(Conditions.ORE_ULTRARICH).setSurveyed(true);
+
+		getMarket().removeCondition(Conditions.RUINS_SCATTERED);
+		getMarket().addCondition(Conditions.RUINS_WIDESPREAD);
+		getMarket().getCondition(Conditions.RUINS_WIDESPREAD).setSurveyed(true);
 		getMarket().reapplyConditions();
 		for(Industry industry: getMarket().getIndustries()){
 			industry.doPreSaveCleanup();
 			industry.doPostSaveRestore();
 		}
-		getMarket().removeIndustry("upgradeoreultrarich", null, false);
+		getMarket().removeIndustry("upgraderuinwidespread", null, false);
 	}
 
 	@Override
 	public boolean isAvailableToBuild() {
-		if(getMarket().hasCondition(Conditions.ORE_RICH)) return true;
+		if(getMarket().hasCondition(Conditions.RUINS_SCATTERED)) return true;
 		return false;
 	}
 

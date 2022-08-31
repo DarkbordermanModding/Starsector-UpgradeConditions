@@ -1,0 +1,12 @@
+github:
+  description: Add industries to upgrade planet conditions.
+  enable_discussions: false
+  enable_issues: false
+  enable_projects: false
+  enable_wiki: false
+  homepage: https://github.com/DarkbordermanModding/Starsector-UpgradeConditions
+  template: false
+  topics:
+    - mod
+    - starsector
+    - starsector-mod

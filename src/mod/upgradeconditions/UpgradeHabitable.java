@@ -1,11 +1,11 @@
-package data.scripts.upgradeconditions;
+package mod.upgradeconditions;
 
 import com.fs.starfarer.api.campaign.econ.Industry;
 import com.fs.starfarer.api.impl.campaign.econ.impl.BaseIndustry;
 import com.fs.starfarer.api.impl.campaign.ids.Conditions;
 
 
-public class UpgradeRareOreRich extends BaseIndustry {
+public class UpgradeHabitable extends BaseIndustry {
 
 	@Override
 	public void apply() {
@@ -15,21 +15,22 @@ public class UpgradeRareOreRich extends BaseIndustry {
 	@Override
 	protected void buildingFinished(){
 		super.buildingFinished();
-		getMarket().removeCondition(Conditions.RARE_ORE_ABUNDANT);
-		getMarket().addCondition(Conditions.RARE_ORE_RICH);
-		getMarket().getCondition(Conditions.RARE_ORE_RICH).setSurveyed(true);
+		getMarket().addCondition(Conditions.HABITABLE);
+		getMarket().getCondition(Conditions.HABITABLE).setSurveyed(true);
 		getMarket().reapplyConditions();
 		for(Industry industry: getMarket().getIndustries()){
 			industry.doPreSaveCleanup();
 			industry.doPostSaveRestore();
 		}
-		getMarket().removeIndustry("upgraderareorerich", null, false);
+		getMarket().removeIndustry("upgradehabitable", null, false);
 	}
 
 	@Override
 	public boolean isAvailableToBuild() {
-		if(getMarket().hasCondition(Conditions.RARE_ORE_ABUNDANT)) return true;
-		return false;
+		if(getMarket().hasCondition(Conditions.HABITABLE)){
+			return false;
+		}
+		return true;
 	}
 
 	@Override

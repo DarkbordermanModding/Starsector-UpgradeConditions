@@ -1,11 +1,11 @@
-package data.scripts.upgradeconditions;
+package mod.upgradeconditions;
 
 import com.fs.starfarer.api.campaign.econ.Industry;
 import com.fs.starfarer.api.impl.campaign.econ.impl.BaseIndustry;
 import com.fs.starfarer.api.impl.campaign.ids.Conditions;
 
 
-public class UpgradeOrganicsCommon extends BaseIndustry {
+public class UpgradeFarmlandPoor extends BaseIndustry {
 
 	@Override
 	public void apply() {
@@ -15,21 +15,27 @@ public class UpgradeOrganicsCommon extends BaseIndustry {
 	@Override
 	protected void buildingFinished(){
 		super.buildingFinished();
-		getMarket().removeCondition(Conditions.ORGANICS_TRACE);
-		getMarket().addCondition(Conditions.ORGANICS_COMMON);
-		getMarket().getCondition(Conditions.ORGANICS_COMMON).setSurveyed(true);
+		getMarket().addCondition(Conditions.FARMLAND_POOR);
+		getMarket().getCondition(Conditions.FARMLAND_POOR).setSurveyed(true);
 		getMarket().reapplyConditions();
 		for(Industry industry: getMarket().getIndustries()){
 			industry.doPreSaveCleanup();
 			industry.doPostSaveRestore();
 		}
-		getMarket().removeIndustry("upgradeorganicscommon", null, false);
+		getMarket().removeIndustry("upgradefarmlandpoor", null, false);
 	}
 
 	@Override
 	public boolean isAvailableToBuild() {
-		if(getMarket().hasCondition(Conditions.ORGANICS_TRACE)) return true;
-		return false;
+		if(
+			getMarket().hasCondition(Conditions.FARMLAND_POOR) ||
+			getMarket().hasCondition(Conditions.FARMLAND_ADEQUATE) ||
+			getMarket().hasCondition(Conditions.FARMLAND_RICH) ||
+			getMarket().hasCondition(Conditions.FARMLAND_BOUNTIFUL)
+		){
+			return false;
+		}
+		return true;
 	}
 
 	@Override

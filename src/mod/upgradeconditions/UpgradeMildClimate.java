@@ -1,11 +1,11 @@
-package data.scripts.upgradeconditions;
+package mod.upgradeconditions;
 
 import com.fs.starfarer.api.campaign.econ.Industry;
 import com.fs.starfarer.api.impl.campaign.econ.impl.BaseIndustry;
 import com.fs.starfarer.api.impl.campaign.ids.Conditions;
 
 
-public class UpgradeOrganicsAbundant extends BaseIndustry {
+public class UpgradeMildClimate extends BaseIndustry {
 
 	@Override
 	public void apply() {
@@ -15,21 +15,22 @@ public class UpgradeOrganicsAbundant extends BaseIndustry {
 	@Override
 	protected void buildingFinished(){
 		super.buildingFinished();
-		getMarket().removeCondition(Conditions.ORGANICS_COMMON);
-		getMarket().addCondition(Conditions.ORGANICS_ABUNDANT);
-		getMarket().getCondition(Conditions.ORGANICS_ABUNDANT).setSurveyed(true);
+		getMarket().addCondition(Conditions.MILD_CLIMATE);
+		getMarket().getCondition(Conditions.MILD_CLIMATE).setSurveyed(true);
 		getMarket().reapplyConditions();
 		for(Industry industry: getMarket().getIndustries()){
 			industry.doPreSaveCleanup();
 			industry.doPostSaveRestore();
 		}
-		getMarket().removeIndustry("upgradeorganicsabundant", null, false);
+		getMarket().removeIndustry("upgrademildclimate", null, false);
 	}
 
 	@Override
 	public boolean isAvailableToBuild() {
-		if(getMarket().hasCondition(Conditions.ORGANICS_COMMON)) return true;
-		return false;
+		if(getMarket().hasCondition(Conditions.MILD_CLIMATE)){
+			return false;
+		}
+		return true;
 	}
 
 	@Override

@@ -3,7 +3,7 @@
 	"name":"Upgrade conditions",
 	"author":"Darkborderman",
 	"version":"0.0.0",
-	"description":"Add some upgradeable conditions",
-	"gameVersion":"0.95.1a-RC6",
+	"description":"Add industries to upgrade planet conditions.",
+	"gameVersion":"0.96a-RC10",
 	"jars": ["jars/upgradeconditions.jar"]
 }
