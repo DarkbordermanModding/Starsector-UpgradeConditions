@@ -29,7 +29,7 @@ public class UpgradeRuinVast extends BaseIndustry {
 
 	@Override
 	public boolean isAvailableToBuild() {
-		if(getMarket().hasCondition(Conditions.RUINS_WIDESPREAD)) return true;
+		if(getMarket().hasCondition(Conditions.RUINS_EXTENSIVE)) return true;
 		return false;
 	}
 
