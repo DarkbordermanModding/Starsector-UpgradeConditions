@@ -30,7 +30,7 @@ upgradehabitable,Add habitable condition,200,180,,0,,,"structure",,graphics/illu
 upgrademildclimate,Add mild climate condition,200,180,,0,,,"structure",,graphics/illustrations/academy.jpg,data.scripts.upgradeconditions.UpgradeMildClimate,"Create mild climate condition.",3000,EXTREME
 ,,,,,,,,,,,,,,
 refreshruincondition,Refresh ruin condition,100,180,,0,,,"structure",,graphics/icons/industry/techmining.png,data.scripts.upgradeconditions.RefreshRuinCondition,"Refresh ruin condition.",3000,EXTREME
-upgraderuinscattered,Upgrade to scattered ruins,50,90,,0,,,"structure",,graphics/icons/industry/techmining.png,data.scripts.upgradeconditions.UpgradeRuinScattered,"Upgrade to scattered ruins.",3000,EXTREME
-upgraderuinwidespread,Upgrade to widespread ruins,100,90,,0,,,"structure",,graphics/icons/industry/techmining.png,data.scripts.upgradeconditions.UpgradeRuinWidespread,"Upgrade to widespread ruins.",3000,EXTREME
-#upgraderuinintensive,Upgrade to abundant organics,150,90,,0,,,"structure",,graphics/icons/industry/techmining.png,data.scripts.upgradeconditions.UpgradeOrganicsAbundant,"Upgrade common organics to abundant organics deposit.",3000,EXTREME
-#upgraderuinvast,Upgrade to plentiful organics,200,90,,0,,,"structure",,graphics/icons/industry/techmining.png,data.scripts.upgradeconditions.UpgradeOrganicsPlentiful,"Upgrade abundant organics to plentiful organics deposit.",3000,EXTREME
+upgraderuinscattered,Upgrade to scattered ruin,50,90,,0,,,"structure",,graphics/icons/industry/techmining.png,data.scripts.upgradeconditions.UpgradeRuinScattered,"Upgrade to scattered ruin.",3000,EXTREME
+upgraderuinwidespread,Upgrade to widespread ruin,100,90,,0,,,"structure",,graphics/icons/industry/techmining.png,data.scripts.upgradeconditions.UpgradeRuinWidespread,"Upgrade to widespread ruin.",3000,EXTREME
+upgraderuinextensive,Upgrade to extensive ruin,150,90,,0,,,"structure",,graphics/icons/industry/techmining.png,data.scripts.upgradeconditions.UpgradeRuinExtensive,"Upgrade to extensive ruin.",3000,EXTREME
+upgraderuinvast,Upgrade to vast ruin,200,90,,0,,,"structure",,graphics/icons/industry/techmining.png,data.scripts.upgradeconditions.UpgradeRuinVast,"Upgrade to vast ruin.",3000,EXTREME

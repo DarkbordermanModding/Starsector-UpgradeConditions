@@ -29,7 +29,7 @@ public class UpgradeRuinScattered extends BaseIndustry {
 			industry.doPreSaveCleanup();
 			industry.doPostSaveRestore();
 		}
-		getMarket().removeIndustry("updateruinscattered", null, false);
+		getMarket().removeIndustry("upgraderuinscattered", null, false);
 	}
 
 	@Override

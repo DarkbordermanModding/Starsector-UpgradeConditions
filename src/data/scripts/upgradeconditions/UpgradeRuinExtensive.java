@@ -5,7 +5,7 @@ import com.fs.starfarer.api.impl.campaign.econ.impl.BaseIndustry;
 import com.fs.starfarer.api.impl.campaign.ids.Conditions;
 
 
-public class UpgradeRuinWidespread extends BaseIndustry {
+public class UpgradeRuinExtensive extends BaseIndustry {
 
 	@Override
 	public void apply() {
@@ -16,20 +16,20 @@ public class UpgradeRuinWidespread extends BaseIndustry {
 	protected void buildingFinished(){
 		super.buildingFinished();
 
-		getMarket().removeCondition(Conditions.RUINS_SCATTERED);
-		getMarket().addCondition(Conditions.RUINS_WIDESPREAD);
-		getMarket().getCondition(Conditions.RUINS_WIDESPREAD).setSurveyed(true);
+		getMarket().removeCondition(Conditions.RUINS_WIDESPREAD);
+		getMarket().addCondition(Conditions.RUINS_EXTENSIVE);
+		getMarket().getCondition(Conditions.RUINS_EXTENSIVE).setSurveyed(true);
 		getMarket().reapplyConditions();
 		for(Industry industry: getMarket().getIndustries()){
 			industry.doPreSaveCleanup();
 			industry.doPostSaveRestore();
 		}
-		getMarket().removeIndustry("upgraderuinwidespread", null, false);
+		getMarket().removeIndustry("upgraderuinextensive", null, false);
 	}
 
 	@Override
 	public boolean isAvailableToBuild() {
-		if(getMarket().hasCondition(Conditions.RUINS_SCATTERED)) return true;
+		if(getMarket().hasCondition(Conditions.RUINS_WIDESPREAD)) return true;
 		return false;
 	}
 
