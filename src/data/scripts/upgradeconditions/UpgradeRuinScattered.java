@@ -6,7 +6,7 @@ import com.fs.starfarer.api.impl.campaign.econ.impl.BaseIndustry;
 import com.fs.starfarer.api.impl.campaign.ids.Conditions;
 
 
-public class RefreshRuinCondition extends BaseIndustry {
+public class UpgradeRuinScattered extends BaseIndustry {
 
 	@Override
 	public void apply() {
@@ -18,25 +18,27 @@ public class RefreshRuinCondition extends BaseIndustry {
 		super.buildingFinished();
 
         MemoryAPI mem = market.getMemoryWithoutUpdate();
-		if (mem.contains("$core_techMiningMult")) {
-            mem.set("$core_techMiningMult", 1f);
+		if (mem.contains("$hasUnexploredRuins")) {
+            mem.set("$hasUnexploredRuins", false);
 		}
 
+		getMarket().addCondition(Conditions.RUINS_SCATTERED);
+		getMarket().getCondition(Conditions.RUINS_SCATTERED).setSurveyed(true);
 		getMarket().reapplyConditions();
 		for(Industry industry: getMarket().getIndustries()){
 			industry.doPreSaveCleanup();
 			industry.doPostSaveRestore();
 		}
-		getMarket().removeIndustry("refreshruincondition", null, false);
+		getMarket().removeIndustry("updateruinscattered", null, false);
 	}
 
 	@Override
 	public boolean isAvailableToBuild() {
 		if(
-            getMarket().hasCondition(Conditions.RUINS_SCATTERED) ||
-            getMarket().hasCondition(Conditions.RUINS_WIDESPREAD) ||
-            getMarket().hasCondition(Conditions.RUINS_EXTENSIVE) ||
-            getMarket().hasCondition(Conditions.RUINS_VAST)
+            !getMarket().hasCondition(Conditions.RUINS_SCATTERED) &&
+            !getMarket().hasCondition(Conditions.RUINS_WIDESPREAD) &&
+            !getMarket().hasCondition(Conditions.RUINS_EXTENSIVE) &&
+            !getMarket().hasCondition(Conditions.RUINS_VAST)
         ) return true;
 		return false;
 	}
